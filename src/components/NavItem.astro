@@ -1,0 +1,11 @@
+---
+interface Props {
+  link: string;
+  label: string;
+}
+const { label, link } = Astro.props;
+---
+
+<li>
+  <a href={link} class="text-2xl text-terminal-green">.{label}()</a>
+</li>

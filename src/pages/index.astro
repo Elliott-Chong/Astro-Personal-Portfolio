@@ -1,81 +1,141 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import ButtonLink from "../components/ButtonLink.astro";
+import { getCollection } from "astro:content";
+let recent_projects = await getCollection("project");
+recent_projects = recent_projects
+  .sort((a, b) => {
+    return (
+      new Date(b.data.timestamp).getTime() -
+      new Date(a.data.timestamp).getTime()
+    );
+  })
+  .slice(0, 3);
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title="Elliott Chong">
+  <div
+    class="flex md:flex-row gap-16 items-center flex-col justify-center mt-6"
+  >
+    <!-- hero description -->
+    <div class="flex-[3]">
+      <h1
+        class="typewrite text-5xl font-bold text-terminal-green md:inline-flex hidden"
+      >
+        Elliott Chong.
+      </h1>
+      <p class="mt-2">Computer Science enthusiast, web designer hobbyist</p>
+      <ButtonLink
+        label="View CV"
+        link="/Elliott Chong CV.pdf"
+        className={"font-bold mt-4"}
+      />
+    </div>
+
+    <!-- hero image -->
+    <div class="flex-[2]">
+      <img src="/images/hero.png" alt="hero" class="hero-img" />
+    </div>
+  </div>
+
+  <!-- recent projects -->
+  <div
+    class="mt-8 text-2xl font-bold text-white flex gap-2 items-center justify-between"
+  >
+    <span>
+      Recent
+      <span class="text-terminal-green">Projects</span>
+    </span>
+    <div class="text-sm">
+      <a href="/projects">View all Projects →</a>
+    </div>
+  </div>
+  <div class="mt-4 flex flex-col gap-4">
+    {
+      recent_projects.map((project) => {
+        const { data } = project;
+        return (
+          <div class="flex rounded-md md:items-center border-2 border-terminal-green/50 p-4 flex-col gap-8 md:flex-row items-center hover:-translate-y-1 transition-all ">
+            <div class="flex-[3]">
+              <img
+                alt={data.image.alt}
+                src={data.image.src}
+                class="object-contain rounded-md w-full p-2 shadow-xl"
+              />
+            </div>
+            <div class="flex flex-col flex-[5] justify-center md:items-start items-center gap-x-8 ">
+              <div class="flex gap-2 md:flex-row flex-col items-center flex-wrap">
+                <h2 class="text-xl font-semibold whitespace-nowrap">
+                  {data.title}
+                </h2>
+                <div class="flex gap-2 flex-wrap justify-center">
+                  {data.tags.map((tag: string) => {
+                    return (
+                      <span class="rounded-md px-2 py-1 text-xs font-semibold border border-terminal-green items-center flex justify-center shadow-lg whitespace-nowrap">
+                        {tag}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+              <p class="text-gray-400 text-sm mt-3 md:mt-2 inline-flex">
+                {new Date(data.timestamp).toDateString()}
+              </p>
+              <p class="text-gray-200 mt-4">
+                {data.description}
+                <a
+                  class="text-terminal-green underline underline-offset-2"
+                  href={"/projects/" + project.slug}
+                >
+                  Learn more
+                </a>
+              </p>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+  .typewrite {
+    position: relative;
+  }
+  .typewrite::after {
+    --width: 13px;
+    content: "";
+    width: var(--width);
+    right: calc(var(--width) * -1 - 5px);
+    top: 0;
+    bottom: 0;
+    background-color: #01f53f;
+    position: absolute;
+    animation: blink 900ms steps(2, start) infinite;
+  }
+  @keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+
+  @keyframes about-radius {
+    0% {
+      border-radius: 63% 37% 27% 73% / 66% 47% 53% 34%;
+    }
+    30% {
+      border-radius: 25% 75% 16% 84% / 79% 21% 79% 21%;
+    }
+    60% {
+      border-radius: 34% 66% 57% 43% / 40% 31% 69% 60%;
+    }
+    100% {
+      border-radius: 63% 37% 27% 73% / 66% 47% 53% 34%;
+    }
+  }
+  .hero-img {
+    position: relative;
+    animation: about-radius infinite 4s ease-in-out;
+    box-shadow: 0px 0px 100px #01f53e64;
+  }
 </style>
