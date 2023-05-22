@@ -15,20 +15,22 @@ recent_projects = recent_projects
 
 <Layout title="Elliott Chong">
   <div
-    class="flex md:flex-row gap-16 items-center flex-col justify-center mt-6"
+    class="flex md:flex-row gap-16 items-center flex-col justify-center mt-0 md:mt-6"
   >
     <!-- hero description -->
-    <div class="flex-[3]">
+    <div class="flex-[3] flex flex-col">
       <h1
-        class="typewrite text-5xl font-bold text-terminal-green md:inline-flex hidden"
+        class="typewrite text-5xl font-bold text-terminal-green md:inline-flex hidden w-fit"
       >
         Elliott Chong.
       </h1>
-      <p class="mt-2">Computer Science enthusiast, web designer hobbyist</p>
+      <p class="mt-2 text-center md:text-left">
+        Computer Science enthusiast, web designer hobbyist
+      </p>
       <ButtonLink
         label="View CV"
         link="/Elliott Chong CV.pdf"
-        className={"font-bold mt-4"}
+        className={"font-bold mt-4 self-center md:self-start"}
       />
     </div>
 
@@ -65,9 +67,7 @@ recent_projects = recent_projects
             </div>
             <div class="flex flex-col flex-[5] justify-center md:items-start items-center gap-x-8 ">
               <div class="flex gap-2 md:flex-row flex-col items-center flex-wrap">
-                <h2 class="text-xl font-semibold whitespace-nowrap">
-                  {data.title}
-                </h2>
+                <h2 class="text-xl font-semibold text-center">{data.title}</h2>
                 <div class="flex gap-2 flex-wrap justify-center">
                   {data.tags.map((tag: string) => {
                     return (
