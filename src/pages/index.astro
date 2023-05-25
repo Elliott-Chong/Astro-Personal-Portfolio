@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
 import ButtonLink from "../components/ButtonLink.astro";
 import { getCollection } from "astro:content";
 let recent_projects = await getCollection("project");
@@ -36,7 +37,13 @@ recent_projects = recent_projects
 
     <!-- hero image -->
     <div class="flex-[2]">
-      <img src="/images/hero.jpg" alt="hero" class="hero-img" />
+      <Image
+        src="/images/hero.jpg"
+        alt="hero"
+        class="hero-img"
+        width={384 * 2}
+        height={512 * 2}
+      />
     </div>
   </div>
 
@@ -59,9 +66,13 @@ recent_projects = recent_projects
         return (
           <div class="flex rounded-md md:items-center border-2 border-terminal-green/50 p-4 flex-col gap-8 md:flex-row items-center hover:-translate-y-1 transition-all ">
             <div class="flex-[3]">
-              <img
-                alt={data.image.alt}
-                src={data.image.src}
+              <Image
+                alt={data.image.alt!}
+                src={data.image.src!}
+                width={385}
+                height={190}
+                width={385 * 2}
+                height={190 * 2}
                 class="object-contain rounded-md w-full p-2 shadow-xl"
               />
             </div>
