@@ -6,7 +6,7 @@ image:
   alt: ""
 timestamp: 2022-07-24
 description: Implemented a custom github dashboard to quickly navigate to my repos
-codeLink: https://github.com/elliott-chong/github-util
+codeLink: https://github.com/nextdrought/github-util
 demoLink: https://github-elliott.vercel.app/
 ---
 

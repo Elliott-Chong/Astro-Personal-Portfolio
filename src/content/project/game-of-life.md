@@ -6,7 +6,7 @@ image:
   alt: ""
 timestamp: 2022-08-13
 description: A visualisation of Conway's Game of Life, a cellular automaton devised by the British mathematician John Horton Conway in 1970.
-codeLink: https://github.com/elliott-chong/game-of-life
+codeLink: https://github.com/nextdrought/game-of-life
 demoLink: https://gameoflife-elliott.netlify.app/
 ---
 

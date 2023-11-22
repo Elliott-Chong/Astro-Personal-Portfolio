@@ -7,7 +7,7 @@ image:
 timestamp: 2022-06-27
 description: A visualisation of the Newton Rhapson method for finding roots of a function.
 
-codeLink: https://github.com/Elliott-Chong/newton-rhapson
+codeLink: https://github.com/nextdrought/newton-rhapson
 demoLink: https://newton-elliott.netlify.app
 ---
 

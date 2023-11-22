@@ -7,7 +7,7 @@ image:
 timestamp: 2022-11-02
 description: A simple and minimalistic todo list for the power user, built with DaisyUI and TailwindCSS, featuring a theme switcher and persistent storage using LocalStorage.
 demoLink: https://todo-elliott.netlify.app/
-codeLink: https://github.com/elliott-chong/todo-list-daisy
+codeLink: https://github.com/nextdrought/todo-list-daisy
 ---
 
 Built with DaisyUI and TailwindCSS, this project serves as a **simple and minimalistic todo list for the power user**, featuring a theme switcher and persistent storage using LocalStorage.

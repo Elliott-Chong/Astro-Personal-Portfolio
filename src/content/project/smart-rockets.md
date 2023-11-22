@@ -6,7 +6,7 @@ image:
   alt: ""
 timestamp: 2022-06-19
 description: This is a showcase of genetic algorithms, a search heuristic inspired by natural evolution.
-codeLink: https://github.com/elliott-chong/smart-rockets
+codeLink: https://github.com/nextdrought/smart-rockets
 demoLink: https://smartrockets-elliott.netlify.app/
 ---
 

@@ -7,7 +7,7 @@ image:
 timestamp: 2022-06-27
 description: Shakespeare monkey simulation with genetic algorithm
 
-codeLink: https://github.com/Elliott-Chong/Shakespear-Monkey
+codeLink: https://github.com/nextdrought/Shakespear-Monkey
 demoLink: https://shakespear-monkey-elliott.netlify.app/
 ---
 

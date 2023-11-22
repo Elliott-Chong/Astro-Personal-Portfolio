@@ -6,7 +6,7 @@ image:
   alt: ""
 timestamp: 2022-03-29
 description: A path finding algorithm that finds the shortest path between two points in a maze.
-codeLink: https://github.com/elliott-chong/path-finding-visualisation
+codeLink: https://github.com/nextdrought/path-finding-visualisation
 demoLink: https://path-finding-visualiser.netlify.app/
 ---
 

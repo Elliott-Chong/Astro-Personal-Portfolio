@@ -6,7 +6,7 @@ image:
   alt: ""
 timestamp: 2022-03-52
 description: An AI capable of playing minesweeper.
-codeLink: https://github.com/elliott-chong/minesweeper-ai
+codeLink: https://github.com/nextdrought/minesweeper-ai
 demoLink: https://minesweeper-elliott.netlify.app/
 ---
 

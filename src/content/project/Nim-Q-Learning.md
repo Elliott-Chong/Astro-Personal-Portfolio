@@ -6,7 +6,7 @@ image:
   alt: ""
 timestamp: 2022-04-17
 description: This is my first machine learning related project. The AI is trained through Q-Learning, playing against itself many times and learning the optimal move to play at any state.
-codeLink: https://github.com/Elliott-Chong/Nim-Q-Learning-AI
+codeLink: https://github.com/nextdrought/Nim-Q-Learning-AI
 demoLink: https://nim-ai.netlify.app/
 ---
 

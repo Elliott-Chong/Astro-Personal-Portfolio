@@ -7,7 +7,7 @@ image:
 timestamp: 2023-01-04
 description: Trying to make a postman clone on the web using DaisyUI and vite...
 
-codeLink: https://github.com/Elliott-Chong/Postman-Clone
+codeLink: https://github.com/nextdrought/Postman-Clone
 demoLink: https://postman-elliott.netlify.app/
 ---
 
