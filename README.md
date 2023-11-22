@@ -1,4 +1,4 @@
-## Personal Portfolio site for [Elliott Chong](https://elliottchong.tech)
+## Personal Portfolio site for [Next Drought](https://elliottchong.tech)
 
 Built with Astro, TailwindCSS and TypeScript.
 Hosted on Netlify.
