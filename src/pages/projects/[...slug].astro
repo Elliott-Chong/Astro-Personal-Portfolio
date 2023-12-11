@@ -14,7 +14,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={`Next Drought | ${entry.data.title}`}>
+<Layout title={`The Pacific Dynamic | ${entry.data.title}`}>
   <div class="text-center">
     <h1 class="md:text-3xl text-xl font-bold">{entry.data.title}</h1>
     <p class="text-gray-400">{new Date(entry.data.timestamp).toDateString()}</p>

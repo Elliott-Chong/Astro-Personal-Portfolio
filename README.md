@@ -1,4 +1,4 @@
-## Personal Portfolio site for [Next Drought](https://nextdrought.tech)
+## Web site for [The Pacific Dynamic](https://www.thedynamicpacific.com)
 
 Built with Astro, TailwindCSS and TypeScript.
 Hosted on Netlify.
